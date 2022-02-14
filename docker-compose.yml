@@ -1,0 +1,30 @@
+version: '3.8'
+
+x-common-variables: &common-variables
+  MYSQL_DATABASE: books
+  MYSQL_USER: MYSQL_USER
+  MYSQL_PASSWORD: MYSQL_PASSWORD
+
+services:
+  nginx:
+    depends_on:
+      - apps
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    expose:
+       - 80
+    ports:
+      - "3050:80"
+
+  apps:
+    build:
+      dockerfile: Dockerfile
+      context: "./apps"
+    expose:
+       - 3000
+       - 4000
+    ports:
+        - "3000:3000"
+        - "4000:4000"

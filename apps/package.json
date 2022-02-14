@@ -1,0 +1,17 @@
+{
+  "name": "state-sharing-poc",
+  "version": "1.0.0",
+  "description": "state sharing poc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start ecosystem.config.js --attach"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^2.0.0",
+    "express": "^4.17.2",
+    "pm2": "^5.1.2"
+  }
+}
